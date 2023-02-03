@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
+import 'package:get_storage/get_storage.dart';
+import 'package:todo_app_getx/app/data/services/storage/services.dart';
 import 'app/modules/home/view.dart';
 
-void main() {
+void main() async {
+  await GetStorage.init();
+  //This code will return the storage service instance
+  await Get.putAsync(() => StorageService().init());
   runApp(const MyApp());
 }
 
