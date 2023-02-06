@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const GetMaterialApp(
-      title: 'ToDo List using GetX',
+      title: 'ToDo List using GetX Framework',
       home: HomePage(),
     );
   }
