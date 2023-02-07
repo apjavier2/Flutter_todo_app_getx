@@ -35,7 +35,6 @@ class Task extends Equatable{
   
   //Equatable. The title, icon, and color will be used to compare it to other instance of this class
   @override
-  // TODO: implement props
   List<Object?> get props => [title, icon, color];
 
 }
