@@ -1,16 +1,6 @@
-# todo_app_getx
+# FLUTTER - Todo App
 
-A new Flutter project.
+An simple todo app using GetX Framework
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Resources Used
+- [Flutter GetX Task Todo App Tutorial](https://www.youtube.com/watch?v=L6bxpjsaNfU&list=PLgGlvOHs_ZdB61bfGgznnepmS-L8ly-XN)
