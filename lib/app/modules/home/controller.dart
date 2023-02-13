@@ -10,6 +10,7 @@ class HomeController extends GetxController {
 
   final formKey = GlobalKey<FormState>();
   final editctrl = TextEditingController();
+  final chipIndex = 0.obs;
   //tasks list for home page and make it observable.
   final tasks = <Task>[].obs;
 
@@ -26,5 +27,17 @@ class HomeController extends GetxController {
   @override
   void onClose() {
     super.onClose();
+  }
+
+  void changeChipIndex(int value) {
+    chipIndex.value = value;
+  }
+
+  bool addTask(Task task) {
+    if (tasks.contains(task)) {
+      return false;
+    }
+    tasks.add(task);
+    return true;
   }
 }
