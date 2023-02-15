@@ -14,6 +14,7 @@ class HomeController extends GetxController {
   final deleting = false.obs;
   //tasks list for home page and make it observable.
   final tasks = <Task>[].obs;
+  final task = Rx<Task?>(null);
 
   @override
   void onInit() {
@@ -37,6 +38,10 @@ class HomeController extends GetxController {
 
   void changeDeleting(bool value) {
     deleting.value = value;
+  }
+
+  void changeTask(Task? select) {
+    task.value = select;
   }
 
   bool addTask(Task task) {
