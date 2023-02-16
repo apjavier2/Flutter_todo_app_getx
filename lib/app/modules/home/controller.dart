@@ -55,4 +55,27 @@ class HomeController extends GetxController {
   void deleteTask(Task task) {
     tasks.remove(task);
   }
+
+  bool updateTask(Task task, String title) {
+    var todos = task.todos ?? [];
+    if (containTodo(todos, title)) {
+      return false;
+    } else {
+      var todo = {'title': title, 'done': false};
+      todos.add(todo);
+      //create duplicate task to modify todo list
+      var newTask = task.copyWith(todos: todos);
+      int oldIndex = tasks.indexOf(task);
+
+      //replace old version with updated version
+      tasks[oldIndex] = newTask;
+
+      tasks.refresh();
+      return true;
+    }
+  }
+
+  bool containTodo(List todos, String title) {
+    return todos.any((element) => element['title'] == title);
+  }
 }
