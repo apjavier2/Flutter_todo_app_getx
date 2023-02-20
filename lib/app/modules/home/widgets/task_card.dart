@@ -18,6 +18,9 @@ class TaskCard extends StatelessWidget {
     final color = HexColor.fromHex(task.color);
     return GestureDetector(
       onTap: () {
+        //set the clicked task in the controller
+        homectrl.changeTask(task);
+        homectrl.changeTodos(task.todos ?? []);
         Get.to(() => DetailPage(), transition: Transition.rightToLeft);
       },
       child: Container(
