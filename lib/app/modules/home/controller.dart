@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:todo_app_getx/app/data/services/storage/repository.dart';
@@ -93,5 +94,40 @@ class HomeController extends GetxController {
         doingTodos.add(todo);
       }
     }
+  }
+
+  bool addTodo(String title) {
+    // bool existing = doingTodos
+    //     .any((e) => e['title'] == todo['title'] && e['done'] == todo['done']);
+    //alternative
+
+    //checking in doing todos:
+    var todo = {'title': title, 'done': false};
+    if (doingTodos
+        .any((element) => mapEquals<String, dynamic>(todo, element))) {
+      return false;
+    }
+
+    //checking in done todos:
+    var doneTodo = {'title': title, 'done': false};
+    if (doingTodos
+        .any((element) => mapEquals<String, dynamic>(doneTodo, element))) {
+      return false;
+    }
+    doingTodos.add(todo);
+    return true;
+  }
+
+  void updateTodos() {
+    var newTodos = <Map<String, dynamic>>[];
+    newTodos.addAll([...doingTodos, ...doneTodos]);
+    //create duplicate task to modify todo list
+    var newTask = task.value!.copyWith(todos: newTodos);
+    int oldIndex = tasks.indexOf(task.value!);
+
+    //replace old version with updated version
+    tasks[oldIndex] = newTask;
+
+    tasks.refresh();
   }
 }
