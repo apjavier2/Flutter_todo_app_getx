@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
 import 'package:step_progress_indicator/step_progress_indicator.dart';
+import 'package:todo_app_getx/app/modules/detail/widgets/doing_list.dart';
 import 'package:todo_app_getx/app/modules/home/controller.dart';
 import 'package:todo_app_getx/app/core/utils/extensions.dart';
 
@@ -110,7 +111,8 @@ class DetailPage extends StatelessWidget {
                         },
                         icon: const Icon(Icons.done))),
               ),
-            )
+            ),
+            DoingList()
           ],
         ),
       ),
